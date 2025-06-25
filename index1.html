@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Background Remover</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+      <div id = 'brand'> ⚡ R-acxo ⚡</div>
+
+  </header>
+
+  <h1>Background Remover</h1>
+
+  <input type="file" id="fileInput" />
+  <br>
+  <button onclick="uploadFile()">Magic</button>
+  
+
+  <div id="spinner"></div>
+
+  <div>
+    <h2 id="statusText"></h2>
+    <img id="outputImage">
+    <br>
+    <button id="downloadBtn" onclick="downloadImage()">Download Image</button>
+  </div>
+
+  <script>
+    let latestDownloadUrl = "";
+
+    async function uploadFile() {
+      const fileInput = document.getElementById('fileInput');
+      const file = fileInput.files[0];
+      if (!file) {
+        alert("Please select a file!");
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("file", file);
+
+      // Show processing text + spinner
+      document.getElementById('statusText').innerText = "Processing the image...";
+      document.getElementById('spinner').style.display = 'block';
+      document.getElementById('outputImage').src = "";
+      document.getElementById('downloadBtn').style.display = 'none';
+
+      try {
+        const res = await fetch("http://127.0.0.1:8000/upload", {
+          method: "POST",
+          body: formData
+        });
+
+        if (!res.ok) {
+          throw new Error("Server error");
+        }
+
+        const data = await res.json();
+
+        const imgUrl = "http://127.0.0.1:8000" + data.image_url;
+        latestDownloadUrl = "http://127.0.0.1:8000" + data.download_url;
+
+        document.getElementById('outputImage').src = imgUrl;
+        document.getElementById('downloadBtn').style.display = 'inline-block';
+        document.getElementById('statusText').innerText = "Image is ready to download!";
+      } catch (err) {
+        alert("Error: " + err.message);
+        document.getElementById('statusText').innerText = "";
+      } finally {
+        document.getElementById('spinner').style.display = 'none';
+      }
+    }
+
+    function downloadImage() {
+      if (latestDownloadUrl) {
+        window.open(latestDownloadUrl, "_blank");
+      }
+    }
+  </script>
+</body>
+</html>

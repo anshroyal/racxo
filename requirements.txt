@@ -1,0 +1,6 @@
+Pillow
+rembg
+sqlalchemy
+datetime
+fastapi
+onnxruntime

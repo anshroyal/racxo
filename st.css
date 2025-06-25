@@ -1,0 +1,159 @@
+body {
+  background: linear-gradient(270deg, #0a0a0a, #1a0033, #0a0a0a, #33004d);
+  background-size: 600% 600%;
+  animation: gradientShift 15s ease infinite;
+  color: #e0b0ff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+#brandName {
+  font-size: 26px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 10px #7700ff, 0 0 20px #aa00ff;
+}
+
+nav button {
+  font-size: 14px;
+  padding: 8px 16px;
+
+
+  border: none;
+  border-radius: 8px;
+  background: #7700ff;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 15px #7700ff;
+  transition: 0.3s;
+}
+
+nav button:hover {
+  background: #aa00ff;
+  box-shadow: 0 0 25px #aa00ff;
+}
+
+.centerContent {
+  text-align: center;
+  padding: 50px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.hero h1 {
+  font-size: 42px;
+  text-shadow: 0 0 20px #7700ff, 0 0 40px #aa00ff;
+}
+
+.tagline {
+  font-size: 20px;
+  margin: 15px 0;
+}
+
+.hero button {
+  padding: 14px 30px;
+  font-size: 20px;
+  border: none;
+  border-radius: 8px;
+  background: #7700ff;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 20px #7700ff;
+  transition: 0.3s;
+  margin-bottom: 30px;
+}
+
+.hero button:hover {
+  background: #aa00ff;
+  box-shadow: 0 0 30px #aa00ff;
+}
+
+.videoContainer {
+  margin: 30px auto;
+  max-width: 500px;
+  border: 2px solid #7700ff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #7700ff;
+  overflow: hidden;
+}
+
+video {
+  width: 100%;
+  display: block;
+}
+
+.features, .stepsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 40px 0;
+}
+
+.featureBox, .stepBox {
+  background: rgba(26, 0, 51, 0.5);
+  border: 2px solid #7700ff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #7700ff;
+  padding: 20px;
+  width: 250px;
+  transition: transform 0.3s;
+}
+
+.featureBox:hover, .stepBox:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #aa00ff;
+}
+
+.stepBox i {
+  color: #e0b0ff;
+  margin-bottom: 10px;
+}
+
+.stepBox h3 {
+  margin: 10px 0 5px 0;
+}
+
+footer {
+  background: #1a0033;
+  padding: 15px;
+  color: #ccc;
+  font-size: 14px;
+  text-align: center;
+}
+
+.socials a {
+  color: #ccc;
+  margin: 0 8px;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.socials a:hover {
+  color: #f7f4f9;
+}
+
+.howToUse {
+  font-size: 26px;
+  color: #fff;
+  margin-top: 60px;
+  text-shadow: 0 0 10px #8f0ef1;
+}
+.or  {
+    color: #f0e9e9;
+
+}
