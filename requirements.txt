@@ -4,3 +4,4 @@ sqlalchemy
 datetime
 fastapi
 onnxruntime
+uvicorn
