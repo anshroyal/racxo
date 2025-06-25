@@ -5,3 +5,5 @@ datetime
 fastapi
 onnxruntime
 uvicorn
+python-multipart
+
