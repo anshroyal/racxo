@@ -2,10 +2,17 @@ from rembg import remove, new_session
 from PIL import Image
 import io
 
-# Create a session with your local model
 session = new_session(model_name="u2netp")
 
 def remove_img(image_bytes):
-    out_bytes = remove(image_bytes, session=session)
-    out_img = Image.open(io.BytesIO(out_bytes))
+    img = Image.open(io.BytesIO(image_bytes))
+    img = img.convert("RGBA")
+    img.thumbnail((512, 512))  # Resize to reduce memory usage
+
+    buf = io.BytesIO()
+    img.save(buf, format="PNG")
+    buf.seek(0)
+
+    out_bytes = remove(buf.read(), session=session)
     return out_bytes
+
