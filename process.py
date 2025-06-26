@@ -3,7 +3,7 @@ from PIL import Image
 import io
 
 # Create a session with your local model
-session = new_session(model_name="u2net", model_path="u2net.onnx")
+session = new_session(model_name="u2netp")
 
 def remove_img(image_bytes):
     out_bytes = remove(image_bytes, session=session)
