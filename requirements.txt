@@ -7,4 +7,4 @@ onnxruntime
 uvicorn
 python-multipart 
 numpy
-opencv
+opencv-python-headless
