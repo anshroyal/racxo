@@ -1,10 +1,7 @@
 Pillow
-rembg
 sqlalchemy
 datetime
 fastapi
-onnxruntime
 uvicorn
 python-multipart 
-numpy
-opencv-python-headless
+
