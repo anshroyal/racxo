@@ -3,5 +3,6 @@ sqlalchemy
 datetime
 fastapi
 uvicorn
+rembg
 python-multipart 
 
